@@ -1,0 +1,151 @@
+﻿[
+    {
+        "born": {
+            "year": 2039,
+            "loc": "USA"
+        },
+        "college": "Arizona",
+        "face": {
+            "fatness": 0.3,
+            "teamColors": [
+                "#0d435e",
+                "#f0494a",
+                "#cccccc"
+            ],
+            "body": {
+                "id": "body",
+                "color": "#bb876f"
+            },
+            "jersey": {
+                "id": "jersey3"
+            },
+            "ear": {
+                "id": "ear3",
+                "size": 0.78
+            },
+            "head": {
+                "id": "head3",
+                "shave": "rgba(0,0,0,0.17)"
+            },
+            "eyeLine": {
+                "id": "none"
+            },
+            "smileLine": {
+                "id": "line4",
+                "size": 1.01
+            },
+            "miscLine": {
+                "id": "none"
+            },
+            "facialHair": {
+                "id": "goatee5"
+            },
+            "eye": {
+                "id": "eye4",
+                "angle": 0
+            },
+            "eyebrow": {
+                "id": "eyebrow4",
+                "angle": -4
+            },
+            "hair": {
+                "id": "crop-fade",
+                "color": "#272421",
+                "flip": false
+            },
+            "mouth": {
+                "id": "straight",
+                "flip": false
+            },
+            "nose": {
+                "id": "nose5",
+                "flip": false,
+                "size": 0.89
+            },
+            "glasses": {
+                "id": "none"
+            },
+            "accessories": {
+                "id": "none"
+            }
+        },
+        "firstName": "Bo",
+        "hgt": 79,
+        "imgURL": "",
+        "lastName": "Maye",
+        "ratings": [
+            {
+                "stre": 48,
+                "spd": 60,
+                "jmp": 69,
+                "endu": 21,
+                "ins": 41,
+                "dnk": 45,
+                "ft": 53,
+                "fg": 66,
+                "tp": 60,
+                "oiq": 36,
+                "diq": 43,
+                "drb": 57,
+                "pss": 45,
+                "reb": 39,
+                "hgt": 52,
+                "fuzz": -0.24970648856575306,
+                "ovr": 51,
+                "pos": "PF",
+                "pot": 68,
+                "season": 2059,
+                "skills": []
+            },
+            {
+                "stre": 47,
+                "spd": 59,
+                "jmp": 68,
+                "endu": 22,
+                "ins": 39,
+                "dnk": 44,
+                "ft": 51,
+                "fg": 65,
+                "tp": 59,
+                "oiq": 38,
+                "diq": 44,
+                "drb": 55,
+                "pss": 43,
+                "reb": 38,
+                "hgt": 53,
+                "fuzz": 0.2471721632121257,
+                "ovr": 51,
+                "pos": "PF",
+                "pot": 64,
+                "season": 2060,
+                "skills": []
+            },
+            {
+                "stre": 45,
+                "spd": 55,
+                "jmp": 66,
+                "endu": 25,
+                "ins": 37,
+                "dnk": 41,
+                "ft": 49,
+                "fg": 62,
+                "tp": 56,
+                "oiq": 38,
+                "diq": 44,
+                "drb": 53,
+                "pss": 41,
+                "reb": 36,
+                "hgt": 53,
+                "fuzz": -0.3088945417863177,
+                "ovr": 49,
+                "pos": "PF",
+                "pot": 61,
+                "season": 2061,
+                "skills": []
+            }
+        ],
+        "tid": 13,
+        "weight": 246,
+        "watch": true
+    }
+]

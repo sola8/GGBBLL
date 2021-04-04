@@ -1,66 +1,69 @@
 ﻿[
     {
         "born": {
-            "year": 2039,
+            "year": 2042,
             "loc": "USA"
         },
-        "college": "Arizona",
+        "college": "Syracuse",
         "face": {
-            "fatness": 0.3,
+            "fatness": 0.57,
             "teamColors": [
                 "#0d435e",
                 "#f0494a",
                 "#cccccc"
             ],
+            "hairBg": {
+                "id": "none"
+            },
             "body": {
                 "id": "body",
-                "color": "#bb876f"
+                "color": "#a67358"
             },
             "jersey": {
                 "id": "jersey3"
             },
             "ear": {
-                "id": "ear3",
-                "size": 0.78
+                "id": "ear1",
+                "size": 0.95
             },
             "head": {
-                "id": "head3",
-                "shave": "rgba(0,0,0,0.17)"
+                "id": "head4",
+                "shave": "rgba(0,0,0,0)"
             },
             "eyeLine": {
-                "id": "none"
+                "id": "line1"
             },
             "smileLine": {
-                "id": "line4",
-                "size": 1.01
+                "id": "line2",
+                "size": 0.4
             },
             "miscLine": {
                 "id": "none"
             },
             "facialHair": {
-                "id": "goatee5"
+                "id": "none"
             },
             "eye": {
-                "id": "eye4",
-                "angle": 0
+                "id": "eye15",
+                "angle": 12
             },
             "eyebrow": {
-                "id": "eyebrow4",
-                "angle": -4
+                "id": "eyebrow19",
+                "angle": -2
             },
             "hair": {
-                "id": "crop-fade",
-                "color": "#272421",
+                "id": "emo",
+                "color": "#1c1008",
                 "flip": false
             },
             "mouth": {
-                "id": "straight",
+                "id": "angry",
                 "flip": false
             },
             "nose": {
-                "id": "nose5",
+                "id": "nose11",
                 "flip": false,
-                "size": 0.89
+                "size": 0.82
             },
             "glasses": {
                 "id": "none"
@@ -69,83 +72,186 @@
                 "id": "none"
             }
         },
-        "firstName": "Bo",
-        "hgt": 79,
+        "firstName": "Cory",
+        "hgt": 78,
         "imgURL": "",
-        "lastName": "Maye",
+        "lastName": "Portillo",
         "ratings": [
             {
-                "stre": 48,
-                "spd": 60,
-                "jmp": 69,
-                "endu": 21,
-                "ins": 41,
-                "dnk": 45,
-                "ft": 53,
-                "fg": 66,
-                "tp": 60,
-                "oiq": 36,
-                "diq": 43,
+                "stre": 50,
+                "spd": 68,
+                "jmp": 66,
+                "endu": 20,
+                "ins": 38,
+                "dnk": 51,
+                "ft": 36,
+                "fg": 38,
+                "tp": 38,
+                "oiq": 32,
+                "diq": 38,
                 "drb": 57,
-                "pss": 45,
-                "reb": 39,
-                "hgt": 52,
-                "fuzz": -0.24970648856575306,
-                "ovr": 51,
-                "pos": "PF",
-                "pot": 68,
-                "season": 2059,
-                "skills": []
-            },
-            {
-                "stre": 47,
-                "spd": 59,
-                "jmp": 68,
-                "endu": 22,
-                "ins": 39,
-                "dnk": 44,
-                "ft": 51,
-                "fg": 65,
-                "tp": 59,
-                "oiq": 38,
-                "diq": 44,
-                "drb": 55,
-                "pss": 43,
-                "reb": 38,
-                "hgt": 53,
-                "fuzz": 0.2471721632121257,
-                "ovr": 51,
-                "pos": "PF",
+                "pss": 44,
+                "reb": 46,
+                "hgt": 43,
+                "fuzz": -0.49221335590860826,
+                "ovr": 43,
+                "pos": "SG",
                 "pot": 64,
+                "season": 2062,
+                "skills": []
+            }
+        ],
+        "tid": 4,
+        "weight": 209,
+        "watch": true
+    },
+    {
+        "born": {
+            "year": 2040,
+            "loc": "USA"
+        },
+        "college": "Georgia Tech",
+        "face": {
+            "fatness": 0.57,
+            "teamColors": [
+                "#0d435e",
+                "#f0494a",
+                "#cccccc"
+            ],
+            "body": {
+                "id": "body",
+                "color": "#74453d"
+            },
+            "jersey": {
+                "id": "jersey3"
+            },
+            "ear": {
+                "id": "ear3",
+                "size": 0.85
+            },
+            "head": {
+                "id": "head3",
+                "shave": "rgba(0,0,0,0)"
+            },
+            "eyeLine": {
+                "id": "line5"
+            },
+            "smileLine": {
+                "id": "line3",
+                "size": 0.99
+            },
+            "miscLine": {
+                "id": "none"
+            },
+            "facialHair": {
+                "id": "none"
+            },
+            "eye": {
+                "id": "eye2",
+                "angle": 14
+            },
+            "eyebrow": {
+                "id": "eyebrow7",
+                "angle": -1
+            },
+            "hair": {
+                "id": "short2",
+                "color": "#272421",
+                "flip": true
+            },
+            "mouth": {
+                "id": "smile3",
+                "flip": true
+            },
+            "nose": {
+                "id": "nose1",
+                "flip": true,
+                "size": 1.12
+            },
+            "glasses": {
+                "id": "none"
+            },
+            "accessories": {
+                "id": "none"
+            }
+        },
+        "firstName": "DeAndre",
+        "hgt": 81,
+        "imgURL": "",
+        "lastName": "Thomas",
+        "ratings": [
+            {
+                "stre": 34,
+                "spd": 59,
+                "jmp": 53,
+                "endu": 26,
+                "ins": 32,
+                "dnk": 33,
+                "ft": 42,
+                "fg": 34,
+                "tp": 42,
+                "oiq": 26,
+                "diq": 27,
+                "drb": 46,
+                "pss": 43,
+                "reb": 47,
+                "hgt": 50,
+                "fuzz": 0.90120820511991,
+                "ovr": 34,
+                "pos": "SF",
+                "pot": 58,
                 "season": 2060,
                 "skills": []
             },
             {
-                "stre": 45,
-                "spd": 55,
-                "jmp": 66,
-                "endu": 25,
-                "ins": 37,
-                "dnk": 41,
-                "ft": 49,
-                "fg": 62,
-                "tp": 56,
-                "oiq": 38,
-                "diq": 44,
-                "drb": 53,
-                "pss": 41,
-                "reb": 36,
-                "hgt": 53,
-                "fuzz": -0.3088945417863177,
-                "ovr": 49,
-                "pos": "PF",
-                "pot": 61,
+                "stre": 37,
+                "spd": 60,
+                "jmp": 54,
+                "endu": 28,
+                "ins": 35,
+                "dnk": 35,
+                "ft": 43,
+                "fg": 35,
+                "tp": 44,
+                "oiq": 32,
+                "diq": 31,
+                "drb": 49,
+                "pss": 45,
+                "reb": 48,
+                "hgt": 50,
+                "fuzz": 0.41624360278809425,
+                "ovr": 38,
+                "pos": "SF",
+                "pot": 59,
                 "season": 2061,
+                "skills": []
+            },
+            {
+                "stre": 33,
+                "spd": 58,
+                "jmp": 51,
+                "endu": 30,
+                "ins": 32,
+                "dnk": 33,
+                "ft": 40,
+                "fg": 33,
+                "tp": 41,
+                "oiq": 32,
+                "diq": 31,
+                "drb": 47,
+                "pss": 43,
+                "reb": 46,
+                "hgt": 50,
+                "fuzz": 0.1992572095661047,
+                "ovr": 36,
+                "pos": "SF",
+                "pot": 52,
+                "season": 2062,
                 "skills": []
             }
         ],
-        "tid": 13,
-        "weight": 246,
+        "tid": 12,
+        "weight": 233,
         "watch": true
     }
 ]

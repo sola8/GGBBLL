@@ -10,15 +10,6 @@ def calc(pts, trb, blk, stl, ast, count):
         tp = base
     return tp;
 
-# def calc2(pts, trb, blk, stl, ast, count):
-#     awards = (7 * count)
-#     tp = (math.ceil((0.015*pts)) + math.ceil((0.09*trb)) + math.ceil((0.03*blk)) + 
-#     math.ceil((0.25*stl)) + math.ceil((0.1*ast)) + awards)
-#     base = math.ceil((0.5*gp)+(0.5*gs))
-#     if tp < base:
-#         tp = base
-#     return tp;
-
 with open('2061_GGBBLL_Post_Playoffs.json', encoding='utf-8-sig') as f:
    export = json.load(f)
      

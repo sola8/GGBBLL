@@ -1,20 +1,6 @@
 import urllib.request, json
 
 
-# def val_inp(prompt):
-#     while True:
-#         try:
-#             value = (input(prompt))
-#         except ValueError:
-#             print("Sorry, I didn't understand that.")
-#             continue
-#         if (value != 1) or (value != 2):
-#             print("Uh-oh, you've made a BIG oopsie!")
-#             continue
-#         else:
-#             break
-#         return value;
-
 
 assignment = []
 i = 1
@@ -47,7 +33,7 @@ if value == "1":
                         if player["ratings"][rating] != season:
                             del player["ratings"][rating]
                             break
-                if player["tid"] == 0: # Consolidate - Make Smaller lmfao
+                if player["tid"] == 0:
                     player["tid"] = 31
                 elif player["tid"] == 1:
                     player["tid"] = 12

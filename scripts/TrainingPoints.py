@@ -13,7 +13,7 @@ def calc(pts, trb, blk, stl, ast, count, cap_chek):
         math.ceil((0.25*stl)) + math.ceil((0.1*ast)) + awards)
         base = math.ceil((0.5*gp)+(0.5*gs))
     else:
-        print("Uh-oh, Stinky! You didn't type in Y or N!")
+        print("Not Y or N!")
         return ("N/A");
     if tp < base:
         tp = base

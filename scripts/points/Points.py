@@ -1,5 +1,6 @@
 import json
 import math
+import urllib.request
 
 def calc(pts, trb, blk, stl, ast, count):
     awards = (4 * count)
@@ -10,11 +11,11 @@ def calc(pts, trb, blk, stl, ast, count):
         tp = base
     return tp;
 
-with open('2061_GGBBLL_Post_Playoffs.json', encoding='utf-8-sig') as f:
-   export = json.load(f)
+with urllib.request.urlopen('https://media.githubusercontent.com/media/sola8/g-league/main/export/2062_GGBBLL_Post_Playoffs.json') as f:
+        export = json.loads(f.read().decode('utf-8-sig'))
      
 tin = input("Tid: ")
-seas = 2061
+seas = 2062
 
 points = []
 fname = []

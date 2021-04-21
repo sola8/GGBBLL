@@ -1,38 +1,6 @@
-import urllib.request, json
+import json
 
-
-
-assignment = []
-i = 1
-season = 2062
-   
-player_keys = ['firstName', 'lastName', 'born', 'college', 'face', 'imgURL', 
-               'tid', 'ratings', 'hgt', 'weight', 'pos']
-
-value = input("Input 1 to parse GBBL Export, 2 to parse GGBBLL export: ")
-
-if (value == "1"):
-    with urllib.request.urlopen('https://raw.githubusercontent.com/OptimalbeastGBBL/GBBL/main/GBBL_2062_Weeks1-2.json') as f:
-        export = json.loads(f.read().decode('utf-8-sig'))
-if value == "2":
-    with open('/Users/sola/Documents/Ish/Sports Sim Ish/GGBL Exports/G-League/2061_GGBBLL_Preseason.json', encoding='utf-8-sig') as f:
-        export = json.load(f)
-
-if value == "1":     
-    while True:
-        fname = input("Enter first name of player: ")
-        lname = input("Enter last name of player: ")
-        if fname == "STOP" or lname == "STOP":
-            break
-        for player in export["players"]:
-            if player["firstName"] == fname and lname == player["lastName"]:
-                for key in list(player.keys()):
-                    if key not in player_keys: 
-                        del player[key]
-                for rating in range(len(player["ratings"])):
-                        if player["ratings"][rating] != season:
-                            del player["ratings"][rating]
-                            break
+def tid_map(player["tid"])
                 if player["tid"] == 0:
                     player["tid"] = 31
                 elif player["tid"] == 1:
@@ -96,16 +64,4 @@ if value == "1":
                 elif player["tid"] == 30:
                     player["tid"] = 27
                 elif player["tid"] == 31:
-                    player["tid"] = 28
-                player["watch"] = True
-                assignment.append(player)
-    assign_data = json.dumps(assignment, indent=4) + ","
-    with open('output.json', "w", encoding='utf-8-sig') as o:
-       json.dump(assignment, o, indent=4)
-
-if value == "2":
-    for things in export:
-        print(things)
-
-
-   
+                    player["tid"] = 28 

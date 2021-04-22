@@ -1,0 +1,241 @@
+﻿[
+    {
+        "born": {
+            "year": 2042,
+            "loc": "USA"
+        },
+        "college": "Iona",
+        "face": {
+            "fatness": 0.34,
+            "teamColors": [
+                "#0d435e",
+                "#f0494a",
+                "#cccccc"
+            ],
+            "hairBg": {
+                "id": "none"
+            },
+            "body": {
+                "id": "body",
+                "color": "#5c3937"
+            },
+            "jersey": {
+                "id": "jersey3"
+            },
+            "ear": {
+                "id": "ear3",
+                "size": 0.83
+            },
+            "head": {
+                "id": "head5",
+                "shave": "rgba(0,0,0,0)"
+            },
+            "eyeLine": {
+                "id": "line4"
+            },
+            "smileLine": {
+                "id": "line4",
+                "size": 1.83
+            },
+            "miscLine": {
+                "id": "chin2"
+            },
+            "facialHair": {
+                "id": "none"
+            },
+            "eye": {
+                "id": "eye12",
+                "angle": 15
+            },
+            "eyebrow": {
+                "id": "eyebrow2",
+                "angle": 12
+            },
+            "hair": {
+                "id": "bald",
+                "color": "#272421",
+                "flip": false
+            },
+            "mouth": {
+                "id": "angry",
+                "flip": false
+            },
+            "nose": {
+                "id": "nose5",
+                "flip": false,
+                "size": 1.03
+            },
+            "glasses": {
+                "id": "none"
+            },
+            "accessories": {
+                "id": "none"
+            }
+        },
+        "firstName": "Joe",
+        "hgt": 74,
+        "imgURL": "",
+        "lastName": "McKeon",
+        "ratings": [
+            {
+                "stre": 43,
+                "spd": 69,
+                "jmp": 70,
+                "endu": 34,
+                "ins": 18,
+                "dnk": 29,
+                "ft": 55,
+                "fg": 54,
+                "tp": 67,
+                "oiq": 30,
+                "diq": 22,
+                "drb": 61,
+                "pss": 50,
+                "reb": 33,
+                "hgt": 28,
+                "fuzz": 1.077611259379863,
+                "ovr": 38,
+                "pos": "PG",
+                "pot": 60,
+                "season": 2062,
+                "skills": [
+                    "3"
+                ]
+            },
+            {
+                "stre": 42,
+                "spd": 68,
+                "jmp": 69,
+                "endu": 40,
+                "ins": 17,
+                "dnk": 28,
+                "ft": 54,
+                "fg": 53,
+                "tp": 66,
+                "oiq": 34,
+                "diq": 26,
+                "drb": 60,
+                "pss": 49,
+                "reb": 32,
+                "hgt": 28,
+                "fuzz": 0.6231021562778354,
+                "ovr": 40,
+                "pos": "PG",
+                "pot": 60,
+                "season": 2063,
+                "skills": [
+                    "3"
+                ]
+            }
+        ],
+        "tid": 5,
+        "weight": 210,
+        "watch": true
+    },
+    {
+        "born": {
+            "year": 2041,
+            "loc": "USA"
+        },
+        "college": "Dayton",
+        "face": {
+            "fatness": 1,
+            "teamColors": [
+                "#0d435e",
+                "#f0494a",
+                "#cccccc"
+            ],
+            "hairBg": {
+                "id": "shaggy"
+            },
+            "body": {
+                "id": "body",
+                "color": "#ad6453"
+            },
+            "jersey": {
+                "id": "jersey3"
+            },
+            "ear": {
+                "id": "ear1",
+                "size": 1
+            },
+            "head": {
+                "id": "head3",
+                "shave": "rgba(0,0,0,0.09)"
+            },
+            "eyeLine": {
+                "id": "line5"
+            },
+            "smileLine": {
+                "id": "none",
+                "size": 0.3
+            },
+            "miscLine": {
+                "id": "freckles1"
+            },
+            "facialHair": {
+                "id": "wilt-sideburns-long"
+            },
+            "eye": {
+                "id": "eye2",
+                "angle": -4
+            },
+            "eyebrow": {
+                "id": "eyebrow2",
+                "angle": 9
+            },
+            "hair": {
+                "id": "shaggy2",
+                "color": "#272421",
+                "flip": false
+            },
+            "mouth": {
+                "id": "mouth3",
+                "flip": false
+            },
+            "nose": {
+                "id": "nose3",
+                "flip": false,
+                "size": 1.16
+            },
+            "glasses": {
+                "id": "none"
+            },
+            "accessories": {
+                "id": "none"
+            }
+        },
+        "firstName": "Marc",
+        "hgt": 81,
+        "imgURL": "",
+        "lastName": "Hampton",
+        "ratings": [
+            {
+                "stre": 44,
+                "spd": 74,
+                "jmp": 67,
+                "endu": 38,
+                "ins": 26,
+                "dnk": 53,
+                "ft": 49,
+                "fg": 54,
+                "tp": 58,
+                "oiq": 36,
+                "diq": 24,
+                "drb": 40,
+                "pss": 31,
+                "reb": 32,
+                "hgt": 55,
+                "fuzz": 0.17481820772531814,
+                "ovr": 46,
+                "pos": "F",
+                "pot": 59,
+                "season": 2063,
+                "skills": []
+            }
+        ],
+        "tid": 5,
+        "weight": 232,
+        "watch": true
+    }
+]

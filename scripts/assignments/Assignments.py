@@ -2,7 +2,7 @@ import urllib.request, json
 
 assignment = []
 i = 1
-season = 2062
+season = 2063
    
 player_keys = ['firstName', 'lastName', 'born', 'college', 'face', 'imgURL', 
                'tid', 'ratings', 'hgt', 'weight', 'pos']
@@ -10,7 +10,7 @@ player_keys = ['firstName', 'lastName', 'born', 'college', 'face', 'imgURL',
 value = input("Input 1 to parse GBBL Export, 2 to parse GGBBLL export: ")
 
 if (value == "1"):
-    with urllib.request.urlopen('https://raw.githubusercontent.com/OptimalbeastGBBL/GBBL/main/GBBL_2062_Weeks1-2.json') as f:
+    with urllib.request.urlopen('https://dl.dropbox.com/s/cxegmkbpb782o27/GBBL2063week1-2.json?dl=0') as f:
         export = json.loads(f.read().decode('utf-8-sig'))
 if value == "2":
     with open('/Users/sola/Documents/Ish/Sports Sim Ish/GGBL Exports/G-League/2061_GGBBLL_Preseason.json', encoding='utf-8-sig') as f:

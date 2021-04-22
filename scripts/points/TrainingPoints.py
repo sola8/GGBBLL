@@ -1,5 +1,6 @@
 import json
 import math
+import urllib.request
 
 def calc(pts, trb, blk, stl, ast, count, cap_chek):
     if cap_chek == "N":
@@ -19,8 +20,8 @@ def calc(pts, trb, blk, stl, ast, count, cap_chek):
         tp = base
     return tp;
 
-with open('2061_GGBBLL_Post_Playoffs.json', encoding='utf-8-sig') as f:
-   data = json.load(f)
+with urllib.request.urlopen('https://media.githubusercontent.com/media/sola8/g-league/main/export/2062_GGBBLL_Post_Playoffs.json') as f:
+        export = json.loads(f.read().decode('utf-8-sig'))
 
 count = 0
 orb = 0
@@ -39,7 +40,7 @@ seas = input("Season: ")
 cap_chek = input("CAP? (Y/N): ")
 
    
-for each in data["players"]:
+for each in export["players"]:
     if each["firstName"] == pinput1 and each["lastName"] == pinput2:
             for some in each["stats"]:
                 if some["playoffs"] == False and some["season"] == int(seas):

@@ -2,3 +2,4 @@ export/.DS_Store
 tests/
 g-league-env/
 scripts/.ipynb_checkpoints/
+/Users/sola/dev/g-league/output.json

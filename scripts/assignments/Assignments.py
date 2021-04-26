@@ -10,18 +10,16 @@ player_keys = ['firstName', 'lastName', 'born', 'college', 'face', 'imgURL',
 value = input("Input 1 to parse GBBL Export, 2 to parse GGBBLL export: ")
 
 if (value == "1"):
-    with urllib.request.urlopen('https://dl.dropbox.com/s/cxegmkbpb782o27/GBBL2063week1-2.json?dl=0') as f:
+    with urllib.request.urlopen('https://raw.githubusercontent.com/OptimalbeastGBBL/GBBL/main/GBBL_2063_Pre-Playoffs.json') as f:
         export = json.loads(f.read().decode('utf-8-sig'))
 if value == "2":
-    with open('/Users/sola/Documents/Ish/Sports Sim Ish/GGBL Exports/G-League/2061_GGBBLL_Preseason.json', encoding='utf-8-sig') as f:
+    with open('/Users/sola/dev/g-league/export/2063_GGBBLL_TradeD.json', encoding='utf-8-sig') as f:
         export = json.load(f)
 
 if value == "1":     
-    while True:
+    while fname != "STOP" or lname != "STOP":
         fname = input("Enter first name of player: ")
         lname = input("Enter last name of player: ")
-        if fname == "STOP" or lname == "STOP":
-            break
         for player in export["players"]:
             if player["firstName"] == fname and lname == player["lastName"]:
                 for key in list(player.keys()):

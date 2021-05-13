@@ -3,3 +3,4 @@ tests/
 g-league-env/
 scripts/.ipynb_checkpoints/
 output.json
+*.rtf

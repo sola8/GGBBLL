@@ -4,16 +4,12 @@ player_keys = ['firstName', 'lastName', 'born', 'college', 'face', 'imgURL',
                'tid', 'ratings', 'hgt', 'weight', 'pos']
 
 value = input("Input 1 to parse GBBL Export, 2 to parse GGBBLL export: ")
-if (value == "1"):
+    
+if value == "1":
     with urllib.request.urlopen('https://raw.githubusercontent.com/OptimalbeastGBBL/GBBL/main/GBBL_2063_Pre-Playoffs.json') as f:
         export = json.loads(f.read().decode('utf-8-sig'))
-if value == "2":
-    with open('/Users/sola/dev/g-league/export/2063_GGBBLL_TradeD.json', encoding='utf-8-sig') as f:
-        export = json.load(f)
-
-if value == "1":
     i = 1
-    assignment = []
+    assignment, fname, lname = []
     season = 2064     
     while fname != "STOP" or lname != "STOP":
         fname = input("Enter first name of player: ")
@@ -98,6 +94,8 @@ if value == "1":
        json.dump(assignment, o, indent=4)
 
 if value == "2":
+    with open('/Users/sola/dev/g-league/export/2063_GGBBLL_TradeD.json', encoding='utf-8-sig') as f:
+        export = json.load(f)
     for things in export:
         print(things)
 

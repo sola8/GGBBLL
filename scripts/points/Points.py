@@ -11,11 +11,11 @@ def calc(pts, trb, blk, stl, ast, count):
         tp = base
     return tp;
 
-with urllib.request.urlopen('https://raw.githubusercontent.com/sola8/g-league/main/export/2063_GGBBLL_Post_Playoffs.json') as f:
+with urllib.request.urlopen('https://raw.githubusercontent.com/sola8/g-league/main/export/2064_GGBBLL_Post_Playoffs.json') as f:
         export = json.loads(f.read().decode('utf-8-sig'))
      
 tin = input("Tid: ")
-seas = 2063
+seas = 2064
 
 points = []
 fname = []

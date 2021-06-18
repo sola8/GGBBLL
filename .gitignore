@@ -1,7 +1,9 @@
 **/.DS_Store
+**/settings.py
 
 tests/
 g-league-env/
 
 assignments.json
 output.json
+

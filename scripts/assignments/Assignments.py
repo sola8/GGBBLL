@@ -6,13 +6,13 @@ player_keys = ['firstName', 'lastName', 'born', 'college', 'face', 'imgURL',
 value = input("Input 1 to parse GBBL Export, 2 to parse GGBBLL export: ")
     
 if value == "1":
-    with urllib.request.urlopen('https://raw.githubusercontent.com/OptimalbeastGBBL/GBBL/main/GBBL_2065_Weeks1-2.json') as f:
+    with urllib.request.urlopen('https://dl.dropbox.com/s/ifoetvi7a2d52e2/bbgm_league_1_2066_regular_season_10-16.json?dl=0') as f:
         export = json.loads(f.read().decode('utf-8-sig'))
     i = 1
     assignment = []
     fname = []
     lname = []
-    season = 2065   
+    season = 20661  
     while fname != "STOP" or lname != "STOP":
         fname = input("Enter first name of player: ")
         lname = input("Enter last name of player: ")

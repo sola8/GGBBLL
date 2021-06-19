@@ -12,8 +12,6 @@ with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
 
 season = export["gameAttributes"]["season"]
 
-print(points_map)
-
 teamDict = dict()
 for team in gbbl_export['teams']:
 	teamTid = team['tid']

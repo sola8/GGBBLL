@@ -11,11 +11,11 @@ The **scripts** are still a work in progress.
 - [x] Map GGBBLL tids to GBBL
 - [x] Have script use different formula depending on player
 - [x] Print out all players at once
-- [ ] CAPs have special formatting with print
+- [x] CAPs have special formatting with print
 - [x] Functions, functions, functions
 
 ### Assignments
-- [x] Handle players with only first/last name
+- [ ] Handle players with only first/last name
 - [x] Dump assignment info into GGBBLL export without pasting
 - [x] Functions, functions, functions
 

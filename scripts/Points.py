@@ -1,68 +1,34 @@
 import json
-import math
 import urllib.request
 
-def calc(pts, trb, blk, stl, ast, count):
-    awards = (4 * count)
-    tp = (math.ceil((0.01*pts)) + math.ceil((0.025*trb)) + math.ceil((0.12*blk)) + 
-    math.ceil((0.15*stl)) + math.ceil((0.035*ast)) + awards)
-    base = math.ceil((0.4*gp)+(0.2*gs))
-    if tp < base:
-        tp = base
-    return tp
+from utils import *
+from settings import *
 
-with urllib.request.urlopen('https://raw.githubusercontent.com/sola8/g-league/main/export/2065_GGBBLL_Post_Playoffs.json') as f:
-        export = json.loads(f.read().decode('utf-8-sig'))
-     
-tin = input("Tid: ")
-seas = 2065
-
-points = []
-fname = []
-lname = []
-i = count = j = 0
-     
-print("------------------------------------------------")
-print('') 
-
-for team in export['teams']: 
-    if team["tid"] == int(tin):
-        print("**@"+team["region"], team["name"],"Training Points:**")
+with urllib.request.urlopen(CURRENT_GGBBLL_EXPORT) as f:
+    export = json.loads(f.read().decode('utf-8-sig'))
         
-        
-for player in export['players']: # Create a function for this?
-   if player["tid"] == int(tin) and player["watch"] == True:
-     fname.append(player['firstName'])
-     lname.append(player['lastName'])
-     name = [i + " " + j for i,j in zip(fname,lname)]
-     for stat in player["stats"]:
-        if stat["playoffs"] == False and stat["season"] == seas:
-             orb = (stat["orb"])
-             drb = (stat["drb"])
-             trb = (orb + drb)
-             pts = (stat["pts"])
-             stl = (stat["stl"])
-             ast = (stat["ast"])
-             blk = (stat["blk"])
-             gp = (stat["gp"])
-             gs = (stat["gs"])
-        if stat["playoffs"] == True and stat["season"] == seas:
-            count += 1
-     for award in player["awards"]:
-       if award["season"] == seas:
-         count += 1
-     for c in name:
-         points.append(calc(pts, trb, blk, stl, ast, count))
-     i += 1
-     points = list(dict.fromkeys(points))
-     orb = drb = trb = pts = stl = ast = blk = gp = gs = count = 0
-  
+with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
+    gbbl_export = json.loads(f.read().decode('utf-8-sig'))
 
-    
-while j in range(len(points)):
-    print(fname[j], lname[j]+"'s", "TP:", points[j])
-    j += 1
-    
-     
-print('')      
-print("------------------------------------------------")
+season = export["gameAttributes"]["season"]
+
+print(points_map)
+
+teamDict = dict()
+for team in gbbl_export['teams']:
+	teamTid = team['tid']
+	teamDict[teamTid] = team['region'] + " " + team['name']
+
+for player in export["players"]:
+    if player["watch"] == True: 
+        CAP_CHECK = cap_check(player)
+        if CAP_CHECK == False:
+            for stat in player["stats"]:
+                if stat["playoffs"] == False and stat["season"] == season:
+                    points = assign_points(stat, player, season)
+                    print_points(points, player, teamDict)
+        else:
+            for stat in player["stats"]:
+                if stat["playoffs"] == False and stat["season"] == season:
+                    points = cap_points(stat, player, season)
+                    print_points(points, player, teamDict)

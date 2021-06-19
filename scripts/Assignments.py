@@ -43,6 +43,3 @@ with open(ASSIGNMENT_FILE_NAME, "r") as file:
 # And this doesn't handle players with no last name...
 with open('assignments.json', "w", encoding='utf-8-sig') as o:
        json.dump(assignments, o, indent=4)
-
-
-   

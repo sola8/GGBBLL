@@ -1,46 +1,24 @@
 import math
 
-def main_to_g_league(tid):
-    return assignment_map[str(tid)]
+## Constants & Maps
 
-def g_league_to_main(tid):
-    return points_map[str(tid)]
+# Keys to keep for assignment transfer
+player_keys = ['firstName', 
+               'lastName', 
+               'born', 
+               'college', 
+               'face', 
+               'imgURL', 
+               'tid', 
+               'ratings', 
+               'hgt', 
+               'weight', 
+               'pos']
 
-def cap_check(player):
-    if(player['firstName'].strip() + " " + player['lastName'].strip()) in CAP_NAMES:
-        return True
-    else:
-        return False
+# Names for all T1 CAPs
+CAP_NAMES = ['Daniel Week-Drake', 'Wojciej Tomasz Szczesny', 'Rodney Okafor']
 
-def awardCount(player, season):
-    awardCount = 0
-    for award in player['awards']:
-       if award["season"] == season:
-            awardCount += 1
-    return awardCount
-
-def assign_points(stat, player, season):
-    awards = awardCount(player, season)
-    points = (math.ceil((0.01*stat['pts'])) + math.ceil((0.025*(stat['drb']+stat['orb']))) + math.ceil((0.12*stat['blk'])) + 
-    math.ceil((0.15*stat['stl'])) + math.ceil((0.035*stat['ast'])) + (4 * awards))
-    base = math.ceil((0.4*stat['gp'])+(0.2*stat['gs']))
-    if (points < base):
-        points = base
-    return points
-
-def cap_points(stat, player, season):
-    pointMin = 30
-    awards = awardCount(player, season)
-    points = (math.ceil((0.015*stat['pts'])) + math.ceil((0.09*(stat['drb']+stat['orb']))) + math.ceil((0.3*stat['blk'])) + 
-    math.ceil((0.25*stat['stl'])) + math.ceil((0.1*stat['ast'])) + (7 * awards))
-    base = math.ceil((0.5*stat['gp'])+(0.5*stat['gs']))
-    if (points < base) and (base >= 30):
-        return base
-    elif (points < base) and (base < 30):
-        return pointMin
-    else:
-        return points
-
+# GBBL -> GGBBLL tid mapping 
 assignment_map = {
     '0': 31,
     '1': 12,
@@ -76,18 +54,51 @@ assignment_map = {
     '31': 28
 }
 
+# GGBBLL -> GBBL tid mapping
 points_map = {v:k for (k, v) in assignment_map.items()}
 
-player_keys = ['firstName', 
-               'lastName', 
-               'born', 
-               'college', 
-               'face', 
-               'imgURL', 
-               'tid', 
-               'ratings', 
-               'hgt', 
-               'weight', 
-               'pos']
+## Functions
+def main_to_g_league(player):
+    return assignment_map[str(player['tid'])]
 
-CAP_NAMES = ['Daniel Week-Drake', 'Wojciej Tomasz Szczesny']
+def g_league_to_main(player):
+    return int(points_map[player['tid']])
+
+def cap_check(player):
+    if(player['firstName'].strip() + " " + player['lastName'].strip()) in CAP_NAMES:
+        return True
+    else:
+        return False
+
+def print_points(points, player, teamDict):
+    output = f"{player['firstName'].strip()} {player['lastName'].strip()} (@{teamDict[g_league_to_main(player)]}): {points} TP"
+    print(output)
+
+def awardCount(player, season):
+    awardCount = 0
+    for award in player['awards']:
+       if award["season"] == season:
+            awardCount += 1
+    return awardCount
+
+def assign_points(stat, player, season):
+    awards = awardCount(player, season)
+    points = (math.ceil((0.01*stat['pts'])) + math.ceil((0.025*(stat['drb']+stat['orb']))) + math.ceil((0.12*stat['blk'])) + 
+    math.ceil((0.15*stat['stl'])) + math.ceil((0.035*stat['ast'])) + (4 * awards))
+    base = math.ceil((0.4*stat['gp'])+(0.2*stat['gs']))
+    if (points < base):
+        points = base
+    return points
+
+def cap_points(stat, player, season):
+    pointMin = 30
+    awards = awardCount(player, season)
+    points = (math.ceil((0.015*stat['pts'])) + math.ceil((0.09*(stat['drb']+stat['orb']))) + math.ceil((0.3*stat['blk'])) + 
+    math.ceil((0.25*stat['stl'])) + math.ceil((0.1*stat['ast'])) + (7 * awards))
+    base = math.ceil((0.5*stat['gp'])+(0.5*stat['gs']))
+    if (points < base) and (base >= 30):
+        return base
+    elif (points < base) and (base < 30):
+        return pointMin
+    else:
+        return points

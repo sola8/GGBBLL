@@ -2,7 +2,7 @@
 
 This is where all the scripts and exports used to manage GGBBLL are located.
 
-The **exports** are all compressed.
+The **exports** are all compressed, and are still being updated with each sim.
 
 The **scripts** are still a work in progress.
 

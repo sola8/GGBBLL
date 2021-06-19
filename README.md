@@ -16,6 +16,6 @@ The **scripts** are still a work in progress.
 
 ### Assignments
 - [ ] Handle players with only first/last name
-- [ ] Dump assignment info into GGBBLL export without pasting
-- [ ] Functions, functions, functions
+- [x] Dump assignment info into GGBBLL export without pasting
+- [x] Functions, functions, functions
 

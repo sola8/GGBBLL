@@ -33,4 +33,4 @@ for player in export["players"]:
             for stat in player["stats"]:
                 if stat["playoffs"] == False and stat["season"] == season:
                     points = cap_points(stat, player, season)
-                    print_points(points, player, teamDict)
+                    print_cap_points(points, player, teamDict)

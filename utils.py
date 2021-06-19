@@ -74,6 +74,10 @@ def print_points(points, player, teamDict):
     output = f"{player['firstName'].strip()} {player['lastName'].strip()} (@{teamDict[g_league_to_main(player)]}): {points} TP"
     print(output)
 
+def print_cap_points(points, player, teamDict):
+    output = f"{player['firstName'].strip()} {player['lastName'].strip()} (CAP) (@{teamDict[g_league_to_main(player)]}): {points} TP"
+    print(output)
+
 def awardCount(player, season):
     awardCount = 0
     for award in player['awards']:

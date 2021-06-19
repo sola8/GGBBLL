@@ -8,7 +8,10 @@ allPlayers = []
 assignments = []
 
 with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
-        export = json.loads(f.read().decode('utf-8-sig'))
+    export = json.loads(f.read().decode('utf-8-sig'))
+
+with open(CURRENT_LOCAL_GGBBLL_EXPORT, encoding='utf-8-sig') as f:
+   ggbbll_export = json.load(f)
 
 # Grab all current players from GBBL export
 for player in export['players']:
@@ -36,10 +39,14 @@ with open(ASSIGNMENT_FILE_NAME, "r") as file:
         # Then, put them on the watch list
         player['tid'] = main_to_g_league(player)
         player['watch'] = True
-        assignments.append(player) # Append to list of total assignments
+        ggbbll_export['players'].append(player) # Append to list of total assignments
+
+assignFile = CURRENT_LOCAL_GGBBLL_EXPORT.replace(".json", "_updated.json")
 
 # Dump to assignments.json file to paste into GGBBLL export later
 # Still need to figure out how to put assignments into GGBBLL export without C/P
 # And this doesn't handle players with no last name...
-with open('assignments.json', "w", encoding='utf-8-sig') as o:
-       json.dump(assignments, o, indent=4)
+with open(assignFile, "w") as o:
+    print('Creating export...')
+    json.dump(ggbbll_export, o)
+    print('Export done.')

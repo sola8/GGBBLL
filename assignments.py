@@ -5,7 +5,6 @@ from utils import *
 from settings import *
 
 allPlayers = []
-assignments = []
 
 with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
     export = json.loads(f.read().decode('utf-8-sig'))
@@ -26,7 +25,7 @@ with open(ASSIGNMENT_FILE_NAME, "r") as file:
     for line in file:
         # Compare names in .txt file with names in export 
         # If match, take the player's info in export
-        player = list(filter(lambda player: (player['firstName'].strip() + " " + player['lastName'].strip()) == line.strip(), allPlayers))[0]
+        player = list(filter(lambda player: (find_player(player)) == line.strip(), allPlayers))[0]
         # Clear unneeded keys from player
         for key in list(player.keys()):
             if key not in player_keys: 

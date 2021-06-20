@@ -4,7 +4,7 @@ This is where all the scripts and exports used to manage GGBBLL are located.
 
 The **exports** are all compressed, and are still being updated with each sim.
 
-As of 6/20/21 - The **scripts** are complete!
+As of **6/20/21** - The **scripts** are complete!
 
 ## Assignments
 

@@ -79,9 +79,9 @@ def print_cap_points(points, player, teamDict):
     print(output)
 
 def find_player(player):
-    if len(player['lastName']) == 0:
+    if len(player['lastName']) == None:
         return player['firstName'].strip()
-    elif len(player['firstName']) == 0:
+    elif len(player['firstName']) == None:
         return player['lastName'].strip()
     else:
         return player['firstName'].strip() + player['lastName'].strip()

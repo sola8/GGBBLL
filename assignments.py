@@ -12,9 +12,9 @@ with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
 with open(CURRENT_LOCAL_GGBBLL_EXPORT, encoding='utf-8-sig') as f:
     GGBBLL = json.load(f)
 
-# Grab all current players from GBBL export
+# Grab all rostered players from GBBL export
 for player in GBBL['players']:
-    if (player['tid'] != -3 and player['tid'] != -2):
+    if (player['tid'] >= 0):
         allPlayers.append(player)
 
 # Get the current GBBL season

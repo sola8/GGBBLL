@@ -70,21 +70,27 @@ def cap_check(player):
     else:
         return False
 
+def playoff_check(stat, season):
+    if stat["playoffs"] == True and stat["season"] == season:
+        return True
+    else:
+        return False
+
 def print_points(points, player, teamDict):
-    output = f"{player['firstName'].strip()} {player['lastName'].strip()} (@{teamDict[g_league_to_main(player)]}): {points} TP"
+    output = f"{find_player(player)} (@{teamDict[g_league_to_main(player)]}): {points} TP"
     print(output)
 
 def print_cap_points(points, player, teamDict):
-    output = f"{player['firstName'].strip()} {player['lastName'].strip()} (CAP) (@{teamDict[g_league_to_main(player)]}): {points} TP"
+    output = f"{find_player(player)} (CAP) (@{teamDict[g_league_to_main(player)]}): {points} TP"
     print(output)
 
 def find_player(player):
-    if len(player['lastName']) == None:
+    if len(player['lastName']) == 0:
         return player['firstName'].strip()
-    elif len(player['firstName']) == None:
+    elif len(player['firstName']) == 0:
         return player['lastName'].strip()
     else:
-        return player['firstName'].strip() + player['lastName'].strip()
+        return player['firstName'].strip() + " " + player['lastName'].strip()
 
 def awardCount(player, season):
     awardCount = 0
@@ -103,7 +109,7 @@ def assign_points(stat, player, season):
     return points
 
 def cap_points(stat, player, season):
-    pointMin = 30
+    points_min = 30
     awards = awardCount(player, season)
     points = (math.ceil((0.015*stat['pts'])) + math.ceil((0.09*(stat['drb']+stat['orb']))) + math.ceil((0.3*stat['blk'])) + 
     math.ceil((0.25*stat['stl'])) + math.ceil((0.1*stat['ast'])) + (7 * awards))
@@ -111,6 +117,6 @@ def cap_points(stat, player, season):
     if (points < base) and (base >= 30):
         return base
     elif (points < base) and (base < 30):
-        return pointMin
+        return points_min
     else:
         return points

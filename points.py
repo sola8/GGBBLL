@@ -4,7 +4,7 @@ import urllib.request
 from utils import *
 from settings import *
 
-winnerPlayers = []
+playoffPlayers = []
 
 # GGBBLL export for assignment stats and point calculations
 with urllib.request.urlopen(CURRENT_GGBBLL_EXPORT) as f:
@@ -17,16 +17,16 @@ with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
 season = GGBBLL["gameAttributes"]["season"]
 
 # Create dictionary of all GBBL teams for mapping
-teamDict = dict()
+GBBLDict = dict()
 for team in GBBL['teams']:
-	teamTid = team['tid']
-	teamDict[teamTid] = team['region'] + " " + team['name']
+	GBBLTid = team['tid']
+	GBBLDict[GBBLTid] = team['region'] + " " + team['name']
 
 # Create list of all GGBBLL players in playoffs
 for player in GGBBLL["players"]:
     for stat in player["stats"]:
         if playoff_check(stat, season):
-            winnerPlayers.append(find_player(player))
+            playoffPlayers.append(find_player(player))
 
 # Loop through all players in watchlist to calc and print points
 for player in GGBBLL["players"]:
@@ -36,13 +36,13 @@ for player in GGBBLL["players"]:
             for stat in player["stats"]:
                 if stat["playoffs"] == False and stat["season"] == season:
                     points = assign_points(stat, player, season)
-                    if find_player(player) in winnerPlayers:
+                    if find_player(player) in playoffPlayers:
                         points += 4
-                    print_points(points, player, teamDict)
+                    print_points(points, player, GBBLDict)
         else:
             for stat in player["stats"]:
                 if stat["playoffs"] == False and stat["season"] == season:
                     points = cap_points(stat, player, season)
-                    if find_player(player) in winnerPlayers:
+                    if find_player(player) in playoffPlayers:
                         points += 7
-                    print_cap_points(points, player, teamDict)
+                    print_cap_points(points, player, GBBLDict)

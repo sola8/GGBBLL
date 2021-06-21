@@ -70,12 +70,18 @@ def cap_check(player):
     else:
         return False
 
+def playoff_check(stat, season):
+    if stat["playoffs"] == True and stat["season"] == season:
+        return True
+    else:
+        return False
+
 def print_points(points, player, teamDict):
-    output = f"{player['firstName'].strip()} {player['lastName'].strip()} (@{teamDict[g_league_to_main(player)]}): {points} TP"
+    output = f"{find_player(player)} (@{teamDict[g_league_to_main(player)]}): {points} TP"
     print(output)
 
 def print_cap_points(points, player, teamDict):
-    output = f"{player['firstName'].strip()} {player['lastName'].strip()} (CAP) (@{teamDict[g_league_to_main(player)]}): {points} TP"
+    output = f"{find_player(player)} (CAP) (@{teamDict[g_league_to_main(player)]}): {points} TP"
     print(output)
 
 def find_player(player):

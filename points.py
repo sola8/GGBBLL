@@ -25,7 +25,7 @@ for team in GBBL["teams"]:
 # Create list of all GGBBLL players in playoffs
 for player in GGBBLL["players"]:
     for stat in player["stats"]:
-        if stat["playoffs"] == True and stat["season"] == season:
+        if playoff_check(stat, season):
             winnerPlayers.append(find_player(player))
 
 # Loop through all players in watchlist to calc and print points

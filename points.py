@@ -10,7 +10,7 @@ playoffPlayers = []
 with urllib.request.urlopen(CURRENT_GGBBLL_EXPORT) as f:
     GGBBLL = json.loads(f.read().decode('utf-8-sig'))
 
-# GBBL GGBBLL for team mapping to print out points     
+# GBBL GGBBLL for team mapping to print out points
 with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
     GBBL = json.loads(f.read().decode('utf-8-sig'))
 
@@ -30,7 +30,7 @@ for player in GGBBLL["players"]:
 
 # Loop through all players in watchlist to calc and print points
 for player in GGBBLL["players"]:
-    if player["watch"] is True: 
+    if player["watch"] is True:
         CAP_CHECK = cap_check(player)
         if CAP_CHECK is False:
             for stat in player["stats"]:

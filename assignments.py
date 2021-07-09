@@ -1,8 +1,8 @@
 import json
 import urllib.request
 
-from utils import *
-from settings import *
+from utils import find_player, player_keys, main_to_g_league
+from settings import CURRENT_GBBL_EXPORT, CURRENT_LOCAL_GGBBLL_EXPORT, ASSIGNMENT_FILE_NAME
 
 allPlayers = []
 

@@ -1,13 +1,11 @@
 import json
-import urllib.request
 
-from utils import find_player, player_keys, main_to_g_league
+from utils import *
 from settings import CURRENT_GBBL_EXPORT, CURRENT_LOCAL_GGBBLL_EXPORT, ASSIGNMENT_FILE_NAME
 
 allPlayers = []
 
-with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
-    GBBL = json.loads(f.read().decode('utf-8-sig'))
+GBBL = fetch_export(CURRENT_GBBL_EXPORT)
 
 with open(CURRENT_LOCAL_GGBBLL_EXPORT, encoding='utf-8-sig') as f:
     GGBBLL = json.load(f)

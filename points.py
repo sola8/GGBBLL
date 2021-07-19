@@ -1,18 +1,16 @@
+from assignments import GBBL
 import json
-import urllib.request
 
-from utils import playoff_check, find_player, assign_points, print_points, cap_check, cap_points, print_cap_points
+from utils import *
 from settings import CURRENT_GBBL_EXPORT, CURRENT_GGBBLL_EXPORT
 
 playoffPlayers = []
 
 # GGBBLL export for assignment stats and point calculations
-with urllib.request.urlopen(CURRENT_GGBBLL_EXPORT) as f:
-    GGBBLL = json.loads(f.read().decode('utf-8-sig'))
+GGBBLL = fetch_export(CURRENT_GGBBLL_EXPORT)
 
 # GBBL GGBBLL for team mapping to print out points
-with urllib.request.urlopen(CURRENT_GBBL_EXPORT) as f:
-    GBBL = json.loads(f.read().decode('utf-8-sig'))
+GBBL = fetch_export(CURRENT_GBBL_EXPORT)
 
 season = GGBBLL["gameAttributes"]["season"]
 

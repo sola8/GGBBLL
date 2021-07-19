@@ -1,4 +1,6 @@
 import math
+import json
+import urllib.request
 
 ## Constants & Maps
 
@@ -16,7 +18,7 @@ player_keys = ['firstName',
                'pos']
 
 # Names for all T1 CAPs
-CAP_NAMES = ['Daniel Week-Drake', 'Wojciej Tomasz Szczesny', 'Rodney Okafor']
+CAP_NAMES = ['Rodney Okafor']
 
 # GBBL -> GGBBLL tid mapping
 assignment_map = {
@@ -122,3 +124,15 @@ def cap_points(stat, player, season):
     if (points < base < 30):
         return points_min
     return points
+
+def fetch_export(filename):
+
+    if filename.lower().startswith('http'):
+        req = urllib.request.Request(filename)
+    else:
+        raise ValueError from None
+    pass
+
+    with urllib.request.urlopen(req) as f:
+        return json.loads(f.read().decode('utf-8-sig'))
+
